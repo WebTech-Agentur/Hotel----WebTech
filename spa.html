@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wellness & Spa | Grand Aurora Wellness & Spa Hotel</title>
     <link rel="stylesheet" href="index.css">
     <style>
-
+        .page-hero {
+            /* Styles moved to index.css */
+        }
         .spa-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: var(--spacing-md);
             margin-top: var(--spacing-lg);
         }
-
         .spa-item {
             padding: var(--spacing-md);
             background: var(--white);
             border-bottom: 3px solid var(--secondary-color);
             transition: var(--transition);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
-
         .spa-item:hover {
             transform: translateY(-5px);
         }
-
         .spa-item h3 {
             color: var(--primary-color);
             margin-bottom: 1rem;
         }
-
         .treatment-section {
-            background-color: #f4f1ea;
-            /* Slightly warmer than bg-color */
+            background-color: #f4f1ea; /* Slightly warmer than bg-color */
             padding: var(--spacing-xl) 0;
             margin-top: var(--spacing-xl);
         }
@@ -60,24 +56,62 @@
         .treatment-card:hover {
             transform: translateY(-10px);
             border-color: var(--secondary-color);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
         }
 
         .treatment-card h3 {
             color: var(--primary-color);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 0.5rem;
-            position: relative;
+            letter-spacing: 1px;
         }
 
-        .treatment-card h3::after {
-            content: '';
-            display: block;
-            width: 40px;
+        .line {
+            width: 50px;
             height: 2px;
             background: var(--secondary-color);
-            margin-top: 10px;
+            margin: 10px 0 20px 0;
+        }
+
+        .treatment-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
             margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            margin: 20px 0;
+        }
+
+        .treatment-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .treatment-footer span {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--text-light);
+        }
+
+        .treatment-footer a {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .treatment-footer a:hover {
+            color: var(--primary-color);
+            letter-spacing: 2px;
         }
 
         .treatment-meta {
@@ -118,7 +152,6 @@
         }
     </style>
 </head>
-
 <body>
     <header id="main-header" class="scrolled">
         <div class="container nav-container">
@@ -143,46 +176,98 @@
 
         <section class="section container">
             <div style="text-align: center; max-width: 800px; margin: 0 auto;" class="fade-up">
-                <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: var(--spacing-sm);">Oase der
-                    Regeneration</h2>
-                <p>Der Spa-Bereich des Grand Aurora ist eine Oase der Ruhe, in der Gäste Körper und Geist regenerieren
-                    können. Auf über 2.000 m² bieten wir Ihnen exklusive Möglichkeiten zur Entspannung.</p>
+                <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: var(--spacing-sm);">Oase der Regeneration</h2>
+                <p>Der Spa-Bereich des Grand Aurora ist eine Oase der Ruhe, in der Gäste Körper und Geist regenerieren können. Auf über 2.000 m² bieten wir Ihnen exklusive Möglichkeiten zur Entspannung.</p>
             </div>
 
-            <div class="spa-explorer fade-up">
-                <!-- Sauna Card -->
-                <div class="spa-card"
-                    onclick="updateSpaInfo('Sauna & Wellness', 'Unsere finnische Sauna sorgt für intensive Entspannung und stärkt das Immunsystem. Genießen Sie die wohltuende Wärme bei einem Aufguss mit Bergkräutern.')">
-                    <img src="hotel_sauna.png" alt="Sauna & Wellness">
-                    <div class="spa-card-overlay">
-                        <h3>Sauna</h3>
-                    </div>
+            <div class="spa-grid fade-up">
+                <div class="spa-item">
+                    <h3>Infinity-Pool</h3>
+                    <p>Genießen Sie den atemberaubenden Blick auf die umliegende Landschaft, während Sie in unserem beheizten Außenpool entspannen.</p>
                 </div>
-
-                <!-- Infinity Pool Card -->
-                <div class="spa-card"
-                    onclick="updateSpaInfo('Infinity Pool', 'Schweben Sie über den Dingen. Unser Infinity Pool bietet einen Panoramablick auf die Aurora-Alpen und ist ganzjährig beheizt für Ihr perfektes Badeerlebnis.')">
-                    <img src="hotel_infinity_pool.png" alt="Infinity Pool">
-                    <div class="spa-card-overlay">
-                        <h3>Infinity Pool</h3>
-                    </div>
+                <div class="spa-item">
+                    <h3>Saunalandschaft</h3>
+                    <p>Finnische Sauna, Bio-Sauna und ein orientalisches Dampfbad bieten vielfältige Möglichkeiten zur Tiefenentspannung.</p>
                 </div>
-
-                <!-- Massage Card -->
-                <div class="spa-card"
-                    onclick="updateSpaInfo('Behandlungen', 'Professionelle Massagen und Spa-Behandlungen für Körper und Geist. Von der klassischen Massage bis hin zu alpinen Beauty-Ritualen.')">
-                    <img src="hotel_spa_massage.png" alt="Behandlungen">
-                    <div class="spa-card-overlay">
-                        <h3>Behandlungen</h3>
-                    </div>
+                <div class="spa-item">
+                    <h3>Ruheräume</h3>
+                    <p>In unseren stilvoll gestalteten Ruheräumen mit komfortablen Liegen und sanfter Beleuchtung finden Sie Zeit für sich selbst.</p>
                 </div>
             </div>
 
-            <div id="spa-info-display" class="spa-info-display fade-up">
-                <i>Exklusive Einblicke</i>
-                <h3>Ihre Reise zur vollkommenen Ruhe</h3>
-                <p>Wählen Sie eine der oben stehenden Erlebniswelten aus und lassen Sie sich von der Magie des Grand Aurora Spa verzaubern. Wir haben jeden Moment für Ihr Wohlbefinden perfektioniert.</p>
+        <section class="treatment-section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: var(--spacing-lg); color: var(--primary-color);">Unsere exklusiven Behandlungen</h2>
+                
+                <div class="treatment-grid fade-up">
+                    <div class="treatment-card">
+                        <h3>Luxus Gesichtsbehandlung</h3>
+                        <div class="line"></div>
+                        <p>Eine intensive Gesichtsbehandlung mit hochwertigen Pflegeprodukten, die Ihre Haut revitalisiert, Feuchtigkeit spendet und für ein jugendliches Strahlen sorgt.</p>
+                        <hr>
+                        <div class="treatment-footer">
+                            <span>⏱ 50 MIN.</span>
+                            <a href="contact.html">ANFRAGEN</a>
+                        </div>
+                    </div>
+
+                    <div class="treatment-card">
+                        <h3>Relax Aroma Öl Massage</h3>
+                        <div class="line"></div>
+                        <p>Eine tiefenentspannende Massage mit warmen Aromaölen, die Körper und Geist beruhigt und für ein vollkommenes Wohlgefühl sorgt.</p>
+                        <hr>
+                        <div class="treatment-footer">
+                            <span>⏱ 75 MIN.</span>
+                            <a href="contact.html">ANFRAGEN</a>
+                        </div>
+                    </div>
+
+                    <div class="treatment-card">
+                        <h3>Klassische Massage</h3>
+                        <div class="line"></div>
+                        <p>Lösen Sie Verspannungen und finden Sie zu innerer Ruhe mit unserer individuell abgestimmten Ganzkörpermassage.</p>
+                        <hr>
+                        <div class="treatment-footer">
+                            <span>⏱ 60 MIN.</span>
+                            <a href="contact.html">ANFRAGEN</a>
+                        </div>
+                    </div>
+
+                    <div class="treatment-card">
+                        <h3>Hot Stone Therapie</h3>
+                        <div class="line"></div>
+                        <p>Die Kraft warmer Lavasteine dringt tief in die Muskulatur ein und sorgt für eine unvergleichliche Tiefenentspannung.</p>
+                        <hr>
+                        <div class="treatment-footer">
+                            <span>⏱ 90 MIN.</span>
+                            <a href="contact.html">ANFRAGEN</a>
+                        </div>
+                    </div>
+
+                    <div class="treatment-card">
+                        <h3>Aromatherapie</h3>
+                        <div class="line"></div>
+                        <p>Elegante Gesichtspflege mit kostbaren ätherischen Ölen für ein strahlendes Aussehen und pure Regeneration.</p>
+                        <hr>
+                        <div class="treatment-footer">
+                            <span>⏱ 45 MIN.</span>
+                            <a href="contact.html">ANFRAGEN</a>
+                        </div>
+                    </div>
+
+                    <div class="treatment-card">
+                        <h3>Alpen-Peeling</h3>
+                        <div class="line"></div>
+                        <p>Ein reinigendes Körperpeeling mit natürlichen Extrakten aus der Bergwelt für eine seidenweiche, vitale Haut.</p>
+                        <hr>
+                        <div class="treatment-footer">
+                            <span>⏱ 30 MIN.</span>
+                            <a href="contact.html">ANFRAGEN</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
         </section>
     </main>
 
@@ -205,7 +290,7 @@
                 <div>
                     <h3>Kontakt</h3>
                     <p>Aurorastraße 1, 12345 Spa-Stadt</p>
-                    <p>Tel: +49 (0) 15566284478</p>
+                    <p>Tel: +49 (0) 123 456 789</p>
                     <p>Email: info@grand-aurora.de</p>
                 </div>
             </div>
@@ -225,17 +310,6 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-        function updateSpaInfo(title, text) {
-            const display = document.getElementById('spa-info-display');
-            display.classList.add('update');
-
-            setTimeout(() => {
-                display.innerHTML = `<h3>${title}</h3><p>${text}</p>`;
-                display.classList.remove('update');
-            }, 300);
-        }
     </script>
 </body>
-
 </html>
