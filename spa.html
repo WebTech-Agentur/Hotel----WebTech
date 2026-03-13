@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness & Spa | Grand Aurora Wellness & Spa Hotel</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+
+        .spa-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .spa-item {
+            padding: var(--spacing-md);
+            background: var(--white);
+            border-bottom: 3px solid var(--secondary-color);
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .spa-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .spa-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .treatment-section {
+            background-color: #f4f1ea;
+            /* Slightly warmer than bg-color */
+            padding: var(--spacing-xl) 0;
+            margin-top: var(--spacing-xl);
+        }
+
+        .treatment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .treatment-card {
+            background: var(--white);
+            padding: var(--spacing-md);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .treatment-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary-color);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .treatment-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .treatment-card h3::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary-color);
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .treatment-meta {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .duration-badge {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .duration-badge::before {
+            content: '🕒';
+            font-size: 1rem;
+        }
+
+        .treatment-link {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .treatment-link:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main-header" class="scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Aurora</a>
+            <nav class="nav-links">
+                <a href="index.html">Startseite</a>
+                <a href="rooms.html">Zimmer</a>
+                <a href="spa.html">Wellness</a>
+                <a href="dining.html">Kulinarik</a>
+                <a href="contact.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero" style="background-image: url('hotel_infinity_pool.png');">
+            <div class="page-hero-content fade-up visible">
+                <h1>Wellness & Spa</h1>
+                <p style="letter-spacing: 5px; text-transform: uppercase;">Oase der Sinne</p>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;" class="fade-up">
+                <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: var(--spacing-sm);">Oase der
+                    Regeneration</h2>
+                <p>Der Spa-Bereich des Grand Aurora ist eine Oase der Ruhe, in der Gäste Körper und Geist regenerieren
+                    können. Auf über 2.000 m² bieten wir Ihnen exklusive Möglichkeiten zur Entspannung.</p>
+            </div>
+
+            <div class="spa-explorer fade-up">
+                <!-- Sauna Card -->
+                <div class="spa-card"
+                    onclick="updateSpaInfo('Sauna & Wellness', 'Unsere finnische Sauna sorgt für intensive Entspannung und stärkt das Immunsystem. Genießen Sie die wohltuende Wärme bei einem Aufguss mit Bergkräutern.')">
+                    <img src="hotel_sauna.png" alt="Sauna & Wellness">
+                    <div class="spa-card-overlay">
+                        <h3>Sauna</h3>
+                    </div>
+                </div>
+
+                <!-- Infinity Pool Card -->
+                <div class="spa-card"
+                    onclick="updateSpaInfo('Infinity Pool', 'Schweben Sie über den Dingen. Unser Infinity Pool bietet einen Panoramablick auf die Aurora-Alpen und ist ganzjährig beheizt für Ihr perfektes Badeerlebnis.')">
+                    <img src="hotel_infinity_pool.png" alt="Infinity Pool">
+                    <div class="spa-card-overlay">
+                        <h3>Infinity Pool</h3>
+                    </div>
+                </div>
+
+                <!-- Massage Card -->
+                <div class="spa-card"
+                    onclick="updateSpaInfo('Behandlungen', 'Professionelle Massagen und Spa-Behandlungen für Körper und Geist. Von der klassischen Massage bis hin zu alpinen Beauty-Ritualen.')">
+                    <img src="hotel_spa_massage.png" alt="Behandlungen">
+                    <div class="spa-card-overlay">
+                        <h3>Behandlungen</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div id="spa-info-display" class="spa-info-display fade-up">
+                <i>Exklusive Einblicke</i>
+                <h3>Ihre Reise zur vollkommenen Ruhe</h3>
+                <p>Wählen Sie eine der oben stehenden Erlebniswelten aus und lassen Sie sich von der Magie des Grand Aurora Spa verzaubern. Wir haben jeden Moment für Ihr Wohlbefinden perfektioniert.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3 class="logo">GRAND AURORA</h3>
+                    <p>Ihr luxuriöses Fünf-Sterne Wellness & Spa Hotel.</p>
+                </div>
+                <div>
+                    <h3>Navigation</h3>
+                    <ul style="line-height: 2;">
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="rooms.html">Zimmer & Suiten</a></li>
+                        <li><a href="spa.html">Wellness & Spa</a></li>
+                        <li><a href="dining.html">Restaurant & Kulinarik</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Kontakt</h3>
+                    <p>Aurorastraße 1, 12345 Spa-Stadt</p>
+                    <p>Tel: +49 (0) 15566284478</p>
+                    <p>Email: info@grand-aurora.de</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Grand Aurora Wellness & Spa Hotel. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        function updateSpaInfo(title, text) {
+            const display = document.getElementById('spa-info-display');
+            display.classList.add('update');
+
+            setTimeout(() => {
+                display.innerHTML = `<h3>${title}</h3><p>${text}</p>`;
+                display.classList.remove('update');
+            }, 300);
+        }
+    </script>
+</body>
+
+</html>

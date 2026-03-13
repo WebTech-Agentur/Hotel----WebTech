@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zimmer & Suiten | Grand Aurora Wellness & Spa Hotel</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .page-hero {
+            /* Styles moved to index.css */
+        }
+
+        .room-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            align-items: center;
+        }
+
+        .room-card:nth-child(even) {
+            direction: rtl;
+        }
+
+        .room-card:nth-child(even) .room-info {
+            direction: ltr;
+        }
+
+        .room-info h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .room-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: var(--spacing-md) 0;
+            font-size: 0.9rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-item::before {
+            content: '•';
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main-header" class="scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Aurora</a>
+            <nav class="nav-links">
+                <a href="index.html">Startseite</a>
+                <a href="rooms.html">Zimmer</a>
+                <a href="spa.html">Wellness</a>
+                <a href="dining.html">Kulinarik</a>
+                <a href="contact.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero" style="background-image: url('hotel_hero_exterior.png');">
+            <div class="page-hero-content fade-up visible">
+                <h1>Zimmer & Suiten</h1>
+                <p style="letter-spacing: 5px; text-transform: uppercase;">Exklusiver Wohnkomfort</p>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="room-card fade-up">
+                <div class="map-container">
+                    <img src="hotel_room_deluxe.png" alt="Deluxe Zimmer Interaktiv">
+
+                    <!-- Bed Point -->
+                    <div class="map-point" style="top: 65%; left: 45%;"></div>
+                    <div class="map-tooltip" style="top: 45%; left: 45%;">
+                        <h4>King-Size Bett</h4>
+                        <p>Höchster Schlafkomfort mit handverlesenen Leinen und ergonomischer Matratze für Ihre
+                            Erholung.</p>
+                    </div>
+
+                    <!-- Balcony Point (Corrected & Optimized) -->
+                    <div class="map-point" style="top: 40%; left: 15%;"></div>
+                    <div class="map-tooltip left-align" style="top: 15%; left: 15%;">
+                        <h4>Panorama Balkon</h4>
+                        <p>Ein privater Logenplatz für spektakuläre Sonnenuntergänge über den Aurora-Alpen.</p>
+                    </div>
+
+                    <!-- Bathroom Point (Corrected & Optimized) -->
+                    <div class="map-point" style="top: 30%; left: 75%;"></div>
+                    <div class="map-tooltip" style="top: 10%; left: 60%;">
+                        <h4>Designer Bad</h4>
+                        <p>Luxuriöses Bad mit freistehender Badewanne und Regendusche.</p>
+                    </div>
+                </div>
+                <div class="room-info">
+                    <h3>Deluxe Zimmer</h3>
+                    <p>Modern und elegant eingerichtet, bieten unsere Deluxe Zimmer höchsten Komfort auf großzügigem
+                        Raum. Warme Farben und hochwertige Möbel schaffen eine sofortige Wohlfühlatmosphäre.</p>
+
+                    <div class="room-features">
+                        <div class="feature-item">King-Size-Bett</div>
+                        <div class="feature-item">Regendusche</div>
+                        <div class="feature-item">Smart-TV & WLAN</div>
+                        <div class="feature-item">Minibar & Balkon</div>
+                    </div>
+                    <a href="contact.html" class="btn">Reservieren</a>
+                </div>
+            </div>
+
+            <div class="room-card fade-up">
+                <div class="map-container">
+                    <img src="hotel_suite_executive.png" alt="Executive Suite Interaktiv">
+
+                    <!-- Living Area Point -->
+                    <div class="map-point" style="top: 60%; left: 30%;"></div>
+                    <div class="map-tooltip left-align" style="top: 40%; left: 30%;">
+                        <h4>Separater Wohnbereich</h4>
+                        <p>Ein großzügiger Bereich mit Samtsofa und edlen Materialien für private Entspannung oder
+                            Gästeempfang.</p>
+                    </div>
+
+                    <!-- Panorama Window Point -->
+                    <div class="map-point" style="top: 40%; left: 50%;"></div>
+                    <div class="map-tooltip" style="top: 20%; left: 50%;">
+                        <h4>Panorama-Fenster</h4>
+                        <p>Bodentiefe Fensterfronten bieten einen unvergleichlichen Ausblick auf den Aurora-See und die
+                            Bergwelt.</p>
+                    </div>
+
+                    <!-- Bathtub Point -->
+                    <div class="map-point" style="top: 55%; left: 80%;"></div>
+                    <div class="map-tooltip right-align" style="top: 35%; left: 80%;">
+                        <h4>Designer-Badewanne</h4>
+                        <p>Erholsame Momente in der freistehenden Badewanne direkt am Fenster – Luxus kombiniert mit
+                            Aussicht.</p>
+                    </div>
+                </div>
+                <div class="room-info">
+                    <h3>Executive Suite</h3>
+                    <p>Für Gäste, die das Besondere suchen. Unsere Executive Suite bietet puren Luxus mit getrenntem
+                        Wohn- und Schlafbereich sowie exklusiven Annehmlichkeiten.</p>
+                    <div class="room-features">
+                        <div class="feature-item">Separater Wohnbereich</div>
+                        <div class="feature-item">Panorama-Fenster</div>
+                        <div class="feature-item">Designer-Badewanne</div>
+                        <div class="feature-item">Privater Concierge</div>
+                    </div>
+                    <a href="contact.html" class="btn">Exklusiv Buchen</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3 class="logo">GRAND AURORA</h3>
+                    <p>Ihr luxuriöses Fünf-Sterne Wellness & Spa Hotel.</p>
+                </div>
+                <div>
+                    <h3>Navigation</h3>
+                    <ul style="line-height: 2;">
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="rooms.html">Zimmer & Suiten</a></li>
+                        <li><a href="spa.html">Wellness & Spa</a></li>
+                        <li><a href="dining.html">Restaurant & Kulinarik</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Kontakt</h3>
+                    <p>Aurorastraße 1, 12345 Spa-Stadt</p>
+                    <p>Tel: +49 (0) 15566284478</p>
+                    <p>Email: info@grand-aurora.de</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Grand Aurora Wellness & Spa Hotel. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

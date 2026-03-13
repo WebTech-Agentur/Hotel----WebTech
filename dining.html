@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant & Kulinarik | Grand Aurora Wellness & Spa Hotel</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .page-hero {
+            /* Styles moved to index.css */
+        }
+
+        .dining-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .menu-preview {
+            background: #fff;
+            padding: var(--spacing-lg);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .menu-category {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .menu-category h3 {
+            color: var(--primary-color);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        .menu-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .menu-item h4 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .menu-item p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Hotel Bar Redesign Styles - Refined to Light Theme (Forced) */
+        .bar-section {
+            background-color: #ffffff !important;
+            color: #2D2D2D !important;
+            padding: var(--spacing-xl) 0;
+            overflow: hidden;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .bar-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+
+        .bar-content h2 {
+            color: #1B3022 !important;
+            font-size: 3rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .bar-content p {
+            color: #666666 !important;
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .signature-drinks {
+            background: #faf9f6 !important;
+            border: 1px solid rgba(212, 175, 55, 0.3) !important;
+            padding: var(--spacing-lg);
+            border-radius: 2px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .signature-drinks h3 {
+            color: #D4AF37 !important;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+
+        .drink-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: var(--spacing-md);
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .drink-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .drink-item:hover {
+            border-bottom-color: #D4AF37;
+            transform: translateX(5px);
+        }
+
+        .drink-info h4 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+            color: #1B3022 !important;
+        }
+
+        .drink-info p {
+            font-size: 0.85rem;
+            color: #666666 !important;
+            margin: 0;
+        }
+
+        .drink-price {
+            font-family: var(--font-body);
+            font-weight: 600;
+            color: #D4AF37 !important;
+        }
+
+        /* Ensure button text remains white on hover/active */
+        .bar-content .btn:hover {
+            color: #ffffff !important;
+        }
+
+        @media (max-width: 768px) {
+            .bar-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .drink-item:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main-header" class="scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Aurora</a>
+            <nav class="nav-links">
+                <a href="index.html">Startseite</a>
+                <a href="rooms.html">Zimmer</a>
+                <a href="spa.html">Wellness</a>
+                <a href="dining.html">Kulinarik</a>
+                <a href="contact.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero" style="background-image: url('hotel_gourmet_dining.png');">
+            <div class="page-hero-content fade-up visible">
+                <h1>Kulinarik</h1>
+                <p style="letter-spacing: 5px; text-transform: uppercase;">Gourmet Erlebnisse</p>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="dining-layout fade-up">
+                <div>
+                    <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: var(--spacing-sm);">
+                        Kulinarische Kunst</h2>
+                    <p>Das elegante Restaurant des Grand Aurora bietet eine harmonische Mischung aus regionaler Küche
+                        und internationalen Spezialitäten. Unsere Küchenchefs verwenden ausschließlich frische und
+                        hochwertige Zutaten, um kreative Gerichte auf höchstem Niveau zuzubereiten.</p>
+                    <p style="margin-top: 1rem;">Gäste können morgens ein reichhaltiges Frühstücksbuffet genießen und
+                        abends ein exklusives Gourmet-Menü erleben. Im Sommer lädt außerdem unsere Panorama-Terrasse
+                        dazu ein, Speisen und Getränke mit Blick auf die Natur zu genießen.</p>
+                    <div style="margin-top: var(--spacing-md); display: flex; gap: 1rem;">
+                        <img src="Screenshot 2026-03-13 094759.png" alt="Kulinarik"
+                            style="border-radius: 5px; width: 100%; height: 300px; object-fit: cover;">
+                    </div>
+                </div>
+
+                <div class="menu-preview">
+                    <h2 style="text-align: center; margin-bottom: var(--spacing-md); font-family: var(--font-heading);">
+                        Gourmet Auszug</h2>
+
+                    <div class="menu-category">
+                        <h3>Vorspeisen</h3>
+                        <div class="menu-item">
+                            <h4>Waldpilz-Essenz</h4>
+                            <p>Mit Kräuter-Ravioli und eingelegten Buchenpilzen</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Rindertatar vom Bio-Weidetier</h4>
+                            <p>Wachtelei, Senfsaat und hausgemachtes Brioche</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-category">
+                        <h3>Hauptgänge</h3>
+                        <div class="menu-item">
+                            <h4>Gebratenes Saiblingsfilet</h4>
+                            <p>An Safran-Risotto, wildem Brokkoli und Beurre Blanc</p>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Zartes Kalbsfilet</h4>
+                            <p>Mit Trüffel-Mousseline, glasierten Urkarotten und Portweinjus</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-category">
+                        <h3>Desserts</h3>
+                        <div class="menu-item">
+                            <h4>Dunkles Schokoladenmousse</h4>
+                            <p>Mit Beeren-Ragout und Sorbet von der Wildkirsche</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bar-section">
+            <div class="container bar-grid fade-up">
+                <div class="bar-content">
+                    <h2>Die Hotelbar</h2>
+                    <p>Lassen Sie den Abend in unserer stilvollen Bar ausklingen. In einem Ambiente von zeitloser
+                        Eleganz
+                        servieren wir Ihnen Meisterwerke der Mixologie.</p>
+                    <p>Wählen Sie aus einer kuratierten Selektion erlesener Weine, seltener Whiskys und kreativer
+                        Cocktails, die Geschichten von fernen Orten und heimischen Traditionen erzählen.</p>
+                    <a href="contact.html" class="btn" style="margin-top: var(--spacing-sm);">Tisch reservieren</a>
+                </div>
+
+                <div class="signature-drinks">
+                    <h3>Signature Drinks</h3>
+
+                    <div class="drink-item">
+                        <div class="drink-info">
+                            <h4>Aurora Gold</h4>
+                            <p>Champagner, Goldstaub, weißer Pfirsich & ein Hauch von Holunder</p>
+                        </div>
+                        <div class="drink-price">18€</div>
+                    </div>
+
+                    <div class="drink-item">
+                        <div class="drink-info">
+                            <h4>Forest Mist</h4>
+                            <p>Premium Gin, Tannennadel-Extrakt, Limette & hausgemachter Waldbeeren-Sirup</p>
+                        </div>
+                        <div class="drink-price">16€</div>
+                    </div>
+
+                    <div class="drink-item">
+                        <div class="drink-info">
+                            <h4>Alpine Old Fashioned</h4>
+                            <p>Rye Whiskey, Zirbenlikör, Ahornsirup & Walnut Bitters</p>
+                        </div>
+                        <div class="drink-price">17€</div>
+                    </div>
+
+                    <div class="drink-item">
+                        <div class="drink-info">
+                            <h4>Midnight Velvet</h4>
+                            <p>Dunkler Rum, Espresso, Kakaobohne & eine Prise Meersalz</p>
+                        </div>
+                        <div class="drink-price">15€</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3 class="logo">GRAND AURORA</h3>
+                    <p>Ihr luxuriöses Fünf-Sterne Wellness & Spa Hotel.</p>
+                </div>
+                <div>
+                    <h3>Navigation</h3>
+                    <ul style="line-height: 2;">
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="rooms.html">Zimmer & Suiten</a></li>
+                        <li><a href="spa.html">Wellness & Spa</a></li>
+                        <li><a href="dining.html">Restaurant & Kulinarik</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Kontakt</h3>
+                    <p>Aurorastraße 1, 12345 Spa-Stadt</p>
+                    <p>Tel: +49 (0) 15566284478</p>
+                    <p>Email: info@grand-aurora.de</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Grand Aurora Wellness & Spa Hotel. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

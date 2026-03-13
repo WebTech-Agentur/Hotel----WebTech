@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt & Buchung | Grand Aurora Wellness & Spa Hotel</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .page-hero {
+            /* Styles moved to index.css */
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--spacing-lg);
+            align-items: start;
+        }
+
+        .contact-info-card {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: var(--spacing-lg);
+            border-radius: 5px;
+        }
+
+        .contact-info-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .contact-detail {
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail label {
+            display: block;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-detail p {
+            font-size: 1.1rem;
+        }
+
+        .booking-form {
+            background: #fff;
+            padding: var(--spacing-lg);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main-header" class="scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Aurora</a>
+            <nav class="nav-links">
+                <a href="index.html">Startseite</a>
+                <a href="rooms.html">Zimmer</a>
+                <a href="spa.html">Wellness</a>
+                <a href="dining.html">Kulinarik</a>
+                <a href="contact.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero" style="background-image: url('hotel_hero_exterior.png');">
+            <div class="page-hero-content fade-up visible">
+                <h1>Kontakt</h1>
+                <p style="letter-spacing: 5px; text-transform: uppercase;">Wir sind für Sie da</p>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="contact-grid">
+                <div class="contact-info-card fade-up">
+                    <h3>Ihre Anreise</h3>
+                    <div class="contact-detail">
+                        <label>Adresse</label>
+                        <p>Aurorastraße 1<br>12345 Spa-Stadt<br>Deutschland</p>
+                    </div>
+                    <div class="contact-detail">
+                        <label>Telefon</label>
+                        <p>+49 (0) 15566284478</p>
+                    </div>
+                    <div class="contact-detail">
+                        <label>E-Mail</label>
+                        <p>info@grand-aurora.de</p>
+                    </div>
+                    <div class="contact-detail">
+                        <label>Reservierung</label>
+                        <p>Täglich von 08:00 - 22:00 Uhr</p>
+                    </div>
+                </div>
+
+                <div class="booking-form fade-up">
+                    <h2 style="margin-bottom: var(--spacing-md); color: var(--primary-color);">Reservierungsanfrage</h2>
+                    <form id="reservation-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="arrival">Anreise</label>
+                                <input type="date" id="arrival" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="departure">Abreise</label>
+                                <input type="date" id="departure" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="room-type">Zimmertyp</label>
+                                <select id="room-type">
+                                    <option value="deluxe">Deluxe Zimmer</option>
+                                    <option value="executive">Executive Suite</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">Gäste</label>
+                                <select id="guests">
+                                    <option value="1">1 Person</option>
+                                    <option value="2" selected>2 Personen</option>
+                                    <option value="3">3 Personen</option>
+                                    <option value="4">4 Personen</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Vollständiger Name</label>
+                            <input type="text" id="name" placeholder="Erika Mustermann" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail Adresse</label>
+                            <input type="email" id="email" placeholder="erika@beispiel.de" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Besondere Wünsche</label>
+                            <textarea id="message" rows="4" placeholder="Teilen Sie uns Ihre Wünsche mit..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Anfrage Senden</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3 class="logo">GRAND AURORA</h3>
+                    <p>Ihr luxuriöses Fünf-Sterne Wellness & Spa Hotel.</p>
+                </div>
+                <div>
+                    <h3>Navigation</h3>
+                    <ul style="line-height: 2;">
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="rooms.html">Zimmer & Suiten</a></li>
+                        <li><a href="spa.html">Wellness & Spa</a></li>
+                        <li><a href="dining.html">Restaurant & Kulinarik</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Kontakt</h3>
+                    <p>Aurorastraße 1, 12345 Spa-Stadt</p>
+                    <p>Tel: +49 (0) 15566284478</p>
+                    <p>Email: info@grand-aurora.de</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Grand Aurora Wellness & Spa Hotel. Alle Rechte保留.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        document.getElementById('reservation-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Vielen Dank für Ihre Anfrage! Wir werden uns in Kürze bei Ihnen melden.');
+        });
+    </script>
+</body>
+
+</html>
