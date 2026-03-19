@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz | Grand Aurora Wellness & Spa Hotel</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+    <header id="main-header" class="scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Aurora</a>
+            <nav class="nav-links">
+                <a href="index.html">Startseite</a>
+                <a href="rooms.html">Zimmer</a>
+                <a href="spa.html">Wellness</a>
+                <a href="dining.html">Kulinarik</a>
+                <a href="contact.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="modern-hero">
+            <div class="hero-visual-bg" style="background-image: url('hotel_lobby_luxury.png');"></div>
+            <div class="modern-hero-content">
+                <span class="hero-tagline">Sicherheit</span>
+                <h1 class="hero-title-main">Datenschutz<span>Ihre Privatsphäre</span></h1>
+                <p class="hero-description-creative">Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Hier erfahren Sie, wie wir mit Ihren Daten umgehen.</p>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="fade-up" style="max-width: 800px; margin: 0 auto;">
+                <h2 style="margin-bottom: var(--spacing-sm); color: var(--primary-color);">1. Datenschutz auf einen Blick</h2>
+                <h3 style="margin: 1.5rem 0 0.5rem; color: var(--primary-color);">Allgemeine Hinweise</h3>
+                <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.</p>
+
+                <h2 style="margin: 2.5rem 0 1rem; color: var(--primary-color);">2. Datenerfassung auf dieser Website</h2>
+                <h3 style="margin: 1.5rem 0 0.5rem; color: var(--primary-color);">Wer ist verantwortlich für die Datenerfassung auf dieser Website?</h3>
+                <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.</p>
+
+                <h3 style="margin: 1.5rem 0 0.5rem; color: var(--primary-color);">Wie erfassen wir Ihre Daten?</h3>
+                <p>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
+
+                <h2 style="margin: 2.5rem 0 1rem; color: var(--primary-color);">3. Hosting</h2>
+                <p>Wir hosten unsere Website bei einem externen Dienstleister (Hoster). Personenbezogene Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert.</p>
+
+                <h2 style="margin: 2.5rem 0 1rem; color: var(--primary-color);">4. Pflichtinformationen</h2>
+                <h3 style="margin: 1.5rem 0 0.5rem; color: var(--primary-color);">Datenschutz</h3>
+                <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+
+                <h2 style="margin: 2.5rem 0 1rem; color: var(--primary-color);">5. Cookies</h2>
+                <p>Unsere Internetseiten verwenden so genannte „Cookies“. Cookies sind kleine Textdateien und richten auf Ihrem Endgerät keinen Schaden an. Sie werden entweder vorübergehend für die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgerät gespeichert.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3 class="logo">GRAND AURORA</h3>
+                    <p>Ihr luxuriöses Fünf-Sterne Wellness & Spa Hotel.</p>
+                </div>
+                <div>
+                    <h3>Navigation</h3>
+                    <ul style="line-height: 2;">
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="rooms.html">Zimmer & Suiten</a></li>
+                        <li><a href="spa.html">Wellness & Spa</a></li>
+                        <li><a href="dining.html">Restaurant & Kulinarik</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Kontakt</h3>
+                    <p>Aurorastraße 1, 12345 Spa-Stadt</p>
+                    <p>Tel: +49 (0) 15566284478</p>
+                    <p>Email: info@grand-aurora.de</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Grand Aurora Wellness & Spa Hotel. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

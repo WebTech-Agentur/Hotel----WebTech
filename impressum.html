@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | Grand Aurora Wellness & Spa Hotel</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+    <header id="main-header" class="scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Aurora</a>
+            <nav class="nav-links">
+                <a href="index.html">Startseite</a>
+                <a href="rooms.html">Zimmer</a>
+                <a href="spa.html">Wellness</a>
+                <a href="dining.html">Kulinarik</a>
+                <a href="contact.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="modern-hero">
+            <div class="hero-visual-bg" style="background-image: url('hotel_lobby_luxury.png');"></div>
+            <div class="modern-hero-content">
+                <span class="hero-tagline">Rechtliches</span>
+                <h1 class="hero-title-main">Impressum<span>Gesetzliche Angaben</span></h1>
+                <p class="hero-description-creative">Hier finden Sie alle notwendigen Informationen über die Betreiber des Grand Aurora Wellness & Spa Hotels.</p>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="fade-up" style="max-width: 800px; margin: 0 auto;">
+                <h2 style="margin-bottom: var(--spacing-sm); color: var(--primary-color);">Angaben gemäß § 5 TMG</h2>
+                <p>Grand Aurora Wellness & Spa Hotel Betriebs GmbH<br>
+                Aurorastraße 1<br>
+                12345 Spa-Stadt<br>
+                Deutschland</p>
+
+                <h3 style="margin: 2rem 0 1rem; color: var(--primary-color);">Vertreten durch:</h3>
+                <p>Geschäftsführung: Maximilian von Aurora, Sophie Wellness</p>
+
+                <h3 style="margin: 2rem 0 1rem; color: var(--primary-color);">Kontakt</h3>
+                <p>Telefon: +49 (0) 15566284478<br>
+                E-Mail: info@grand-aurora.de</p>
+
+                <h3 style="margin: 2rem 0 1rem; color: var(--primary-color);">Registereintrag</h3>
+                <p>Eintragung im Handelsregister.<br>
+                Registergericht: Amtsgericht Spa-Stadt<br>
+                Registernummer: HRB 123456</p>
+
+                <h3 style="margin: 2rem 0 1rem; color: var(--primary-color);">Umsatzsteuer-ID</h3>
+                <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+                DE 987 654 321</p>
+
+                <h3 style="margin: 2rem 0 1rem; color: var(--primary-color);">EU-Streitschlichtung</h3>
+                <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+                <a href="https://ec.europa.eu/consumers/odr/" target="_blank" style="color: var(--secondary-color); text-decoration: underline;">https://ec.europa.eu/consumers/odr/</a>.<br>
+                Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+
+                <h3 style="margin: 2rem 0 1rem; color: var(--primary-color);">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h3>
+                <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3 class="logo">GRAND AURORA</h3>
+                    <p>Ihr luxuriöses Fünf-Sterne Wellness & Spa Hotel.</p>
+                </div>
+                <div>
+                    <h3>Navigation</h3>
+                    <ul style="line-height: 2;">
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="rooms.html">Zimmer & Suiten</a></li>
+                        <li><a href="spa.html">Wellness & Spa</a></li>
+                        <li><a href="dining.html">Restaurant & Kulinarik</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Kontakt</h3>
+                    <p>Aurorastraße 1, 12345 Spa-Stadt</p>
+                    <p>Tel: +49 (0) 15566284478</p>
+                    <p>Email: info@grand-aurora.de</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Grand Aurora Wellness & Spa Hotel. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

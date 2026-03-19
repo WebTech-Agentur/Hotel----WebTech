@@ -8,10 +8,6 @@
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="favicon.png" type="image/png">
     <style>
-        .page-hero {
-            /* Styles moved to index.css */
-        }
-
         .dining-layout {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -177,60 +173,70 @@
             <div class="modern-hero-content">
                 <span class="hero-tagline">Kulinarik</span>
                 <h1 class="hero-title-main">Gourmet & Genuss<span>Feinste Aromen</span></h1>
-                <p class="hero-description-creative">Kreative Rezeptideen treffen auf regionale Zutaten. Genießen Sie erstklassige Kulinarik in einem exklusiven Ambiente.</p>
+                <p class="hero-description-creative">Kreative Rezeptideen treffen auf regionale Zutaten. Genießen Sie
+                    erstklassige Kulinarik in einem exklusiven Ambiente.</p>
             </div>
         </section>
 
-        <section class="section container">
-            <div class="dining-layout fade-up">
-                <div>
-                    <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: var(--spacing-sm);">
-                        Kulinarische Kunst</h2>
-                    <p>Das elegante Restaurant des Grand Aurora bietet eine harmonische Mischung aus regionaler Küche
-                        und internationalen Spezialitäten. Unsere Küchenchefs verwenden ausschließlich frische und
-                        hochwertige Zutaten, um kreative Gerichte auf höchstem Niveau zuzubereiten.</p>
-                    <p style="margin-top: 1rem;">Gäste können morgens ein reichhaltiges Frühstücksbuffet genießen und
-                        abends ein exklusives Gourmet-Menü erleben. Im Sommer lädt außerdem unsere Panorama-Terrasse
-                        dazu ein, Speisen und Getränke mit Blick auf die Natur zu genießen.</p>
-                    <div style="margin-top: var(--spacing-md); display: flex; gap: 1rem;">
-                        <img src="Screenshot 2026-03-13 094759.png" alt="Kulinarik"
-                            style="border-radius: 5px; width: 100%; height: 300px; object-fit: cover;">
+        <section class="section container creative-dining-section">
+            <div class="creative-dining-layout fade-up">
+                <div class="dining-content-wrapper">
+                    <h2 class="creative-dining-title">Kulinarische Kunst</h2>
+                    <div class="title-underline"></div>
+                    <p class="dining-intro">Das elegante Restaurant des Grand Aurora bietet eine harmonische Mischung
+                        aus regionaler Küche und internationalen Spezialitäten. Unsere Küchenchefs verwenden
+                        ausschließlich frische und hochwertige Zutaten, um kreative Gerichte auf höchstem Niveau
+                        zuzubereiten.</p>
+                    <p class="dining-text">Gäste können morgens ein reichhaltiges Frühstücksbuffet genießen und abends
+                        ein exklusives Gourmet-Menü erleben. Im Sommer lädt außerdem unsere Panorama-Terrasse dazu ein,
+                        Speisen und Getränke mit Blick auf die Natur zu genießen.</p>
+
+                    <div class="dining-images-creative">
+                        <div class="gold-accent-square"></div>
+                        <div class="img-frame img-main">
+                            <img src="Screenshot 2026-03-13 094759.png" alt="Kulinarisches Erlebnis">
+                        </div>
+                        <div class="img-frame img-offset">
+                            <img src="Screenshot 2026-03-13 144813.png">
+                        </div>
                     </div>
                 </div>
 
-                <div class="menu-preview">
-                    <h2 style="text-align: center; margin-bottom: var(--spacing-md); font-family: var(--font-heading);">
-                        Gourmet Auszug</h2>
+                <div class="creative-menu-preview">
+                    <div class="menu-board-inner">
+                        <h2 class="menu-board-title">Gourmet Auszug</h2>
+                        <div class="menu-board-divider"><span>✦</span></div>
 
-                    <div class="menu-category">
-                        <h3>Vorspeisen</h3>
-                        <div class="menu-item">
-                            <h4>Waldpilz-Essenz</h4>
-                            <p>Mit Kräuter-Ravioli und eingelegten Buchenpilzen</p>
+                        <div class="menu-category creative-category">
+                            <h3>Vorspeisen</h3>
+                            <div class="menu-item">
+                                <h4>Waldpilz-Essenz</h4>
+                                <p>Mit Kräuter-Ravioli und eingelegten Buchenpilzen</p>
+                            </div>
+                            <div class="menu-item">
+                                <h4>Rindertatar vom Bio-Weidetier</h4>
+                                <p>Wachtelei, Senfsaat und hausgemachtes Brioche</p>
+                            </div>
                         </div>
-                        <div class="menu-item">
-                            <h4>Rindertatar vom Bio-Weidetier</h4>
-                            <p>Wachtelei, Senfsaat und hausgemachtes Brioche</p>
-                        </div>
-                    </div>
 
-                    <div class="menu-category">
-                        <h3>Hauptgänge</h3>
-                        <div class="menu-item">
-                            <h4>Gebratenes Saiblingsfilet</h4>
-                            <p>An Safran-Risotto, wildem Brokkoli und Beurre Blanc</p>
+                        <div class="menu-category creative-category">
+                            <h3>Hauptgänge</h3>
+                            <div class="menu-item">
+                                <h4>Gebratenes Saiblingsfilet</h4>
+                                <p>An Safran-Risotto, wildem Brokkoli und Beurre Blanc</p>
+                            </div>
+                            <div class="menu-item">
+                                <h4>Zartes Kalbsfilet</h4>
+                                <p>Mit Trüffel-Mousseline, glasierten Urkarotten und Portweinjus</p>
+                            </div>
                         </div>
-                        <div class="menu-item">
-                            <h4>Zartes Kalbsfilet</h4>
-                            <p>Mit Trüffel-Mousseline, glasierten Urkarotten und Portweinjus</p>
-                        </div>
-                    </div>
 
-                    <div class="menu-category">
-                        <h3>Desserts</h3>
-                        <div class="menu-item">
-                            <h4>Dunkles Schokoladenmousse</h4>
-                            <p>Mit Beeren-Ragout und Sorbet von der Wildkirsche</p>
+                        <div class="menu-category creative-category">
+                            <h3>Desserts</h3>
+                            <div class="menu-item">
+                                <h4>Dunkles Schokoladenmousse</h4>
+                                <p>Mit Beeren-Ragout und Sorbet von der Wildkirsche</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -302,6 +308,8 @@
                         <li><a href="rooms.html">Zimmer & Suiten</a></li>
                         <li><a href="spa.html">Wellness & Spa</a></li>
                         <li><a href="dining.html">Restaurant & Kulinarik</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
                     </ul>
                 </div>
                 <div>
