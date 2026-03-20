@@ -1,158 +1,152 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wellness & Spa | Grand Aurora Wellness & Spa Hotel</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="favicon.png" type="image/png">
     <style>
         .page-hero {
             /* Styles moved to index.css */
         }
+
         .spa-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: var(--spacing-md);
             margin-top: var(--spacing-lg);
         }
+
         .spa-item {
-            padding: var(--spacing-md);
             background: var(--white);
             border-bottom: 3px solid var(--secondary-color);
             transition: var(--transition);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 10px;
         }
-        .spa-item:hover {
-            transform: translateY(-5px);
+
+        .spa-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
+
+        .spa-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .spa-item-content {
+            padding: var(--spacing-md);
+        }
+
         .spa-item h3 {
             color: var(--primary-color);
             margin-bottom: 1rem;
         }
-        .treatment-section {
-            background-color: #f4f1ea; /* Slightly warmer than bg-color */
-            padding: var(--spacing-xl) 0;
+
+        .treatment-list {
             margin-top: var(--spacing-xl);
-        }
-
-        .treatment-grid {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-lg);
+            gap: 1.5rem;
         }
 
-        .treatment-card {
+        .treatment-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem;
             background: var(--white);
-            padding: var(--spacing-md);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            position: relative;
-            transition: var(--transition);
+            border-radius: 15px;
+            border-left: 4px solid var(--secondary-color);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .treatment-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.1);
+            background: #fffdf9;
+        }
+
+        .treatment-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .treatment-info {
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            gap: 0.5rem;
         }
 
-        .treatment-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--secondary-color);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-        }
-
-        .treatment-card h3 {
-            color: var(--primary-color);
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
-
-        .line {
-            width: 50px;
-            height: 2px;
-            background: var(--secondary-color);
-            margin: 10px 0 20px 0;
-        }
-
-        .treatment-card p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        hr {
-            border: 0;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            margin: 20px 0;
-        }
-
-        .treatment-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .treatment-footer span {
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            color: var(--text-light);
-        }
-
-        .treatment-footer a {
-            font-size: 0.8rem;
-            color: var(--secondary-color);
+        .treatment-name {
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .treatment-footer a:hover {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
             color: var(--primary-color);
-            letter-spacing: 2px;
+            margin: 0;
         }
 
         .treatment-meta {
-            margin-top: auto;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: var(--spacing-md);
-            border-top: 1px solid #f0f0f0;
-        }
-
-        .duration-badge {
-            font-size: 0.8rem;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .treatment-meta span {
             display: flex;
             align-items: center;
             gap: 5px;
         }
 
-        .duration-badge::before {
-            content: '🕒';
-            font-size: 1rem;
-        }
-
-        .treatment-link {
-            font-size: 0.8rem;
+        .treatment-cta {
             color: var(--secondary-color);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s ease;
         }
 
-        .treatment-link:hover {
-            color: var(--primary-color);
+        .treatment-item:hover .treatment-cta {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 600px) {
+            .treatment-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .treatment-img {
+                width: 100%;
+                height: 200px;
+            }
         }
     </style>
 </head>
+
 <body>
     <header id="main-header" class="scrolled">
         <div class="container nav-container">
@@ -168,109 +162,108 @@
     </header>
 
     <main>
-        <section class="modern-hero">
-            <div class="hero-visual-bg" style="background-image: url('hotel_infinity_pool.png');"></div>
-            <div class="modern-hero-content">
-                <span class="hero-tagline">Regeneration</span>
-                <h1 class="hero-title-main">Wellness & Spa<span>Oase der Sinne</span></h1>
-                <p class="hero-description-creative">Tauchen Sie ein in eine Welt der Ruhe und lassen Sie den Alltag hinter sich. Entdecken Sie exklusive Behandlungen auf höchstem Niveau.</p>
+        <section class="page-hero" style="background-image: url('hotel_infinity_pool.png');">
+            <div class="page-hero-content fade-up visible">
+                <h1>Wellness & Spa</h1>
+                <p style="letter-spacing: 5px; text-transform: uppercase;">Oase der Sinne</p>
             </div>
         </section>
 
         <section class="section container">
             <div style="text-align: center; max-width: 800px; margin: 0 auto;" class="fade-up">
-                <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: var(--spacing-sm);">Oase der Regeneration</h2>
-                <p>Der Spa-Bereich des Grand Aurora ist eine Oase der Ruhe, in der Gäste Körper und Geist regenerieren können. Auf über 2.000 m² bieten wir Ihnen exklusive Möglichkeiten zur Entspannung.</p>
+                <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: var(--spacing-sm);">Oase der
+                    Regeneration</h2>
+                <p>Der Spa-Bereich des Grand Aurora ist eine Oase der Ruhe, in der Gäste Körper und Geist regenerieren
+                    können. Auf über 2.000 m² bieten wir Ihnen exklusive Möglichkeiten zur Entspannung.</p>
             </div>
 
             <div class="spa-grid fade-up">
                 <div class="spa-item">
-                    <h3>Infinity-Pool</h3>
-                    <p>Genießen Sie den atemberaubenden Blick auf die umliegende Landschaft, während Sie in unserem beheizten Außenpool entspannen.</p>
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=800&auto=format&fit=crop"
+                        alt="Infinity Pool">
+                    <div class="spa-item-content">
+                        <h3>Infinity-Pool</h3>
+                        <p>Genießen Sie den atemberaubenden Blick auf die umliegende Landschaft, während Sie in unserem
+                            beheizten Außenpool entspannen.</p>
+                    </div>
                 </div>
                 <div class="spa-item">
-                    <h3>Saunalandschaft</h3>
-                    <p>Finnische Sauna, Bio-Sauna und ein orientalisches Dampfbad bieten vielfältige Möglichkeiten zur Tiefenentspannung.</p>
+                    <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?q=80&w=800&auto=format&fit=crop"
+                        alt="Saunalandschaft">
+                    <div class="spa-item-content">
+                        <h3>Saunalandschaft</h3>
+                        <p>Finnische Sauna, Bio-Sauna und ein orientalisches Dampfbad bieten vielfältige Möglichkeiten
+                            zur
+                            Tiefenentspannung.</p>
+                    </div>
                 </div>
                 <div class="spa-item">
-                    <h3>Ruheräume</h3>
-                    <p>In unseren stilvoll gestalteten Ruheräumen mit komfortablen Liegen und sanfter Beleuchtung finden Sie Zeit für sich selbst.</p>
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop"
+                        alt="Ruheräume">
+                    <div class="spa-item-content">
+                        <h3>Ruheräume</h3>
+                        <p>In unseren stilvoll gestalteten Ruheräumen mit komfortablen Liegen und sanfter Beleuchtung
+                            finden
+                            Sie Zeit für sich selbst.</p>
+                    </div>
                 </div>
             </div>
 
-        <section class="treatment-section">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: var(--spacing-lg); color: var(--primary-color);">Unsere exklusiven Behandlungen</h2>
-                
-                <div class="treatment-grid fade-up">
-                    <div class="treatment-card">
-                        <h3>Luxus Gesichtsbehandlung</h3>
-                        <div class="line"></div>
-                        <p>Eine intensive Gesichtsbehandlung mit hochwertigen Pflegeprodukten, die Ihre Haut revitalisiert, Feuchtigkeit spendet und für ein jugendliches Strahlen sorgt.</p>
-                        <hr>
-                        <div class="treatment-footer">
-                            <span>⏱ 50 MIN.</span>
-                            <a href="contact.html">ANFRAGEN</a>
-                        </div>
-                    </div>
+            <div class="treatment-list fade-up">
+                <h2 style="text-align: center; margin-bottom: var(--spacing-lg);">Exklusive Behandlungen</h2>
 
-                    <div class="treatment-card">
-                        <h3>Relax Aroma Öl Massage</h3>
-                        <div class="line"></div>
-                        <p>Eine tiefenentspannende Massage mit warmen Aromaölen, die Körper und Geist beruhigt und für ein vollkommenes Wohlgefühl sorgt.</p>
-                        <hr>
-                        <div class="treatment-footer">
-                            <span>⏱ 75 MIN.</span>
-                            <a href="contact.html">ANFRAGEN</a>
+                <a href="buchung.html" class="treatment-item">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=300&auto=format&fit=crop"
+                        class="treatment-img" alt="Massage">
+                    <div class="treatment-info">
+                        <h3 class="treatment-name">Klassische Ganzkörpermassage</h3>
+                        <div class="treatment-meta">
+                            <span>🕒 60 Min.</span>
+                            <span>💎 Individuell abgestimmt</span>
                         </div>
                     </div>
+                    <div class="treatment-cta">Jetzt anfragen ➝</div>
+                </a>
 
-                    <div class="treatment-card">
-                        <h3>Klassische Massage</h3>
-                        <div class="line"></div>
-                        <p>Lösen Sie Verspannungen und finden Sie zu innerer Ruhe mit unserer individuell abgestimmten Ganzkörpermassage.</p>
-                        <hr>
-                        <div class="treatment-footer">
-                            <span>⏱ 60 MIN.</span>
-                            <a href="contact.html">ANFRAGEN</a>
+                <a href="buchung.html" class="treatment-item">
+                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=300&auto=format&fit=crop"
+                        class="treatment-img" alt="Hot Stone">
+                    <div class="treatment-info">
+                        <h3 class="treatment-name">Hot Stone Therapie</h3>
+                        <div class="treatment-meta">
+                            <span>🕒 90 Min.</span>
+                            <span>💎 Tiefenwärme & Entspannung</span>
                         </div>
                     </div>
+                    <div class="treatment-cta">Jetzt anfragen ➝</div>
+                </a>
 
-                    <div class="treatment-card">
-                        <h3>Hot Stone Therapie</h3>
-                        <div class="line"></div>
-                        <p>Die Kraft warmer Lavasteine dringt tief in die Muskulatur ein und sorgt für eine unvergleichliche Tiefenentspannung.</p>
-                        <hr>
-                        <div class="treatment-footer">
-                            <span>⏱ 90 MIN.</span>
-                            <a href="contact.html">ANFRAGEN</a>
+                <a href="buchung.html" class="treatment-item">
+                    <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=300&auto=format&fit=crop"
+                        class="treatment-img" alt="Gesichtsbehandlung">
+                    <div class="treatment-info">
+                        <h3 class="treatment-name">Aromatherapie Gesichtsbehandlung</h3>
+                        <div class="treatment-meta">
+                            <span>🕒 45 Min.</span>
+                            <span>💎 Frische & Regeneration</span>
                         </div>
                     </div>
+                    <div class="treatment-cta">Jetzt anfragen ➝</div>
+                </a>
 
-                    <div class="treatment-card">
-                        <h3>Aromatherapie</h3>
-                        <div class="line"></div>
-                        <p>Elegante Gesichtspflege mit kostbaren ätherischen Ölen für ein strahlendes Aussehen und pure Regeneration.</p>
-                        <hr>
-                        <div class="treatment-footer">
-                            <span>⏱ 45 MIN.</span>
-                            <a href="contact.html">ANFRAGEN</a>
+                <a href="buchung.html" class="treatment-item">
+                    <img src="https://images.unsplash.com/photo-1649751295468-953038600bef?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        class="treatment-img" alt="Körperpeeling">
+                    <div class="treatment-info">
+                        <h3 class="treatment-name">Alpen-Körperpeeling</h3>
+                        <div class="treatment-meta">
+                            <span>🕒 30 Min.</span>
+                            <span>💎 Reinigend & Belebend</span>
                         </div>
                     </div>
-
-                    <div class="treatment-card">
-                        <h3>Alpen-Peeling</h3>
-                        <div class="line"></div>
-                        <p>Ein reinigendes Körperpeeling mit natürlichen Extrakten aus der Bergwelt für eine seidenweiche, vitale Haut.</p>
-                        <hr>
-                        <div class="treatment-footer">
-                            <span>⏱ 30 MIN.</span>
-                            <a href="contact.html">ANFRAGEN</a>
-                        </div>
-                    </div>
-                </div>
+                    <div class="treatment-cta">Jetzt anfragen ➝</div>
+                </a>
             </div>
-        </section>
         </section>
     </main>
 
@@ -279,7 +272,7 @@
             <div class="footer-grid">
                 <div class="footer-info">
                     <h3 class="logo">GRAND AURORA</h3>
-                    <p>Ihr luxuriöses Fünf-Sterne Wellness & Spa Hotel.</p>
+                    <p>Ihr exklusives Refugium für Entspannung, Luxus und Wohlbefinden.</p>
                 </div>
                 <div>
                     <h3>Navigation</h3>
@@ -288,14 +281,12 @@
                         <li><a href="rooms.html">Zimmer & Suiten</a></li>
                         <li><a href="spa.html">Wellness & Spa</a></li>
                         <li><a href="dining.html">Restaurant & Kulinarik</a></li>
-                        <li><a href="impressum.html">Impressum</a></li>
-                        <li><a href="datenschutz.html">Datenschutz</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3>Kontakt</h3>
-                    <p>Aurorastraße 1, 12345 Spa-Stadt</p>
-                    <p>Tel: +49 (0) 123 456 789</p>
+                    <p>Zimmermannstraße 2798 29525 Uelzen 52.960531, 10.576723</p>
+                    <p>Tel: +49 15566284478</p>
                     <p>Email: info@grand-aurora.de</p>
                 </div>
             </div>
@@ -317,4 +308,5 @@
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     </script>
 </body>
+
 </html>
