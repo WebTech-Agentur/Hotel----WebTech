@@ -157,20 +157,43 @@ header.scrolled {
     text-transform: uppercase;
 }
 
-.nav-links {
+.navbar {
     display: flex;
-    gap: var(--spacing-md);
+    justify-content: center;
     align-items: center;
+    gap: 2rem; /* Abstand zwischen den Menüpunkten */
+    flex-wrap: wrap; /* verhindert Überlappung */
 }
 
-.nav-links a {
+.navbar a {
     color: var(--white);
-    font-size: 0.8rem;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
+    white-space: nowrap; /* verhindert Umbruch innerhalb eines Wortes */
     position: relative;
     padding: 5px 0;
+}
+
+/* Für Laptop (z. B. 1024px – 1440px) */
+@media (max-width: 1200px) {
+    .navbar {
+        gap: 1.2rem; /* etwas enger */
+    }
+    .navbar a {
+        font-size: 13px;
+    }
+}
+
+/* Für kleinere Laptops */
+@media (max-width: 1024px) {
+    .navbar {
+        gap: 1rem;
+    }
+    .navbar a {
+        font-size: 12px;
+    }
 }
 
 /* Removed nav-cta and btn-nav styles */
@@ -360,7 +383,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .nav-links {
+    .navbar {
         display: none; /* In a real app, implement hamburger menu here */
     }
     
