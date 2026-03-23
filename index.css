@@ -789,3 +789,84 @@ footer {
     pointer-events: none;
     z-index: 1;
 }
+
+/* --- Elegant CTA Section Redesign --- */
+.elegant-cta-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(27, 48, 34, 0.04) 0%, transparent 100%);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 4rem;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.elegant-cta-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--secondary-color);
+}
+
+.cta-subtitle {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.cta-title {
+    font-size: 3.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.cta-desc {
+    font-size: 1.15rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.elegant-cta-image-wrapper {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.elegant-cta-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.elegant-cta-container:hover .elegant-cta-image {
+    transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+    .elegant-cta-container {
+        grid-template-columns: 1fr;
+        padding: 2.5rem;
+        gap: 2.5rem;
+    }
+    .cta-title {
+        font-size: 2.5rem;
+    }
+    .elegant-cta-image {
+        height: 350px;
+    }
+}
