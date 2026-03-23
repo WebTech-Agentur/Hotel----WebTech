@@ -265,6 +265,7 @@ header.scrolled {
     text-align: center;
     max-width: 1000px;
     padding: var(--spacing-md);
+    margin-top: 100px; /* Schiebt den Inhalt unter den Navbar-Header */
 }
 
 .hero-tagline {
@@ -274,6 +275,7 @@ header.scrolled {
     letter-spacing: 6px;
     text-transform: uppercase;
     color: var(--secondary-color);
+    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     display: block;
     animation: fadeInDown 1s ease;
@@ -282,10 +284,11 @@ header.scrolled {
 .hero-title-main {
     font-size: clamp(3rem, 8vw, 5.5rem);
     line-height: 0.95;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: -2px;
     font-weight: 800;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Macht den Text sauber erkennbar */
 }
 
 .hero-title-main span {
